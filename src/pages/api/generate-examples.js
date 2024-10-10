@@ -10,24 +10,34 @@ export default async function handler(req, res) {
     try {
       const { content } = req.body;
       const response = await openai.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "user",
-            content: `Based on the language concept identified, which is: ${content}, generate comprehensive examples and explanations for better understanding. Include various sentences and exercises in both English and the identified language, focusing on key uses and nuances.`,
+            content: `The following is a language concept identified for a learner's focus: ${content}. Your task is to create a practical teaching guide that emphasizes:
+
+1. Real-world applications of the concept, illustrating how it’s commonly used in everyday conversations and situations. Focus on scenarios that learners are likely to encounter in daily life or work settings.
+2. Explanations of how the concept functions across different contexts, such as making requests, expressing permission, or conveying causation, depending on the concept.
+3. Common, widely used phrases or expressions that incorporate this concept. Show how these phrases are used by native speakers, and provide examples with explanations for clarity.
+4. Simple and memorable techniques to help learners remember how and when to use this concept effectively. Include any tips or mnemonic devices that make it easier for learners to recall and apply the concept.
+
+Avoid textbook-style content. Instead, ensure the guide is dynamic and accessible, helping learners understand how this concept is applied in practical, real-life situations. 
+`,
           },
         ],
-        max_tokens: 1000,
+        max_tokens: 5000,
         temperature: 0.7,
       });
 
       const examples = response.choices[0].message.content.trim();
 
-      const audioBase64 = await textToSpeech(examples);
+      console.log("Generated Examples and Explanations:", examples);
 
-      res
-        .status(200)
-        .json({ examples, audioUrl: `data:audio/mpeg;base64,${audioBase64}` });
+      //   const audioBase64 = await textToSpeech(examples);
+      //   res
+      //     .status(200)
+      //     .json({ examples, audioUrl: `data:audio/mpeg;base64,${audioBase64}` });
+      res.status(200).json({ examples });
     } catch (error) {
       console.error("Error generating examples:", error);
       res.status(500).json({ error: "Error generating examples" });

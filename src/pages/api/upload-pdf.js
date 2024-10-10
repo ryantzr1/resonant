@@ -42,10 +42,17 @@ export default async function handler(req, res) {
         );
       }
 
-      const systemPrompt = `You will receive text extracted from a PDF. Identify the primary language being used and any specific language concepts being discussed, such as grammar rules, verb conjugations, or idioms. Provide a summary of these concepts and specify the language.`;
+      const systemPrompt = `You will be provided with text extracted from a PDF document. Your task is to:
+1. Identify the primary language of the content and state it clearly.
+2. Analyze the text to determine any specific language concepts being covered, such as grammar rules, verb conjugations, idioms, sentence structures, or cultural nuances.
+3. Summarize these concepts in a concise, informative manner, explaining what the user would need to know to understand and apply these concepts in practical language use. 
+4. If possible, include brief examples to illustrate the main points.
+
+Make sure to focus on the educational aspects of the content and highlight key learning points that a language learner might need to focus on.
+`;
 
       const gptResponse = await client.chat.completions.create({
-        model: "gpt-4",
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
