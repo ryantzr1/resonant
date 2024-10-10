@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState, useRef } from "react";
 import DynamicContentFormatter from "./DynamicContentFormatter";
@@ -88,7 +89,7 @@ export default function Home() {
               <ol className="list-decimal list-inside space-y-2 text-gray-700">
                 <li>
                   Upload a PDF file containing language content you wish to
-                  learn using the "Upload PDF" button.
+                  learn using the &quot;Upload PDF&quot; button.
                 </li>
                 <li>
                   After uploading, click "More Examples" to explore in-depth
