@@ -63,7 +63,7 @@ Make sure to focus on the educational aspects of the content and highlight key l
             content: extractedText,
           },
         ],
-        max_tokens: 500,
+        max_tokens: 1000,
         temperature: 0.7,
       });
 

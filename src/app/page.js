@@ -87,25 +87,15 @@ export default function Home() {
                 How to Use for Language Learning:
               </h2>
               <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                <li>
-                  Upload a PDF file containing language content you wish to
-                  learn using the &quot;Upload PDF&quot; button.
-                </li>
-                <li>
-                  After uploading, click "More Examples" to explore in-depth
-                  explanations, see additional usage examples, and listen to
-                  audio recordings for better comprehension.
-                </li>
-                <li>
-                  Select "Speaking Practice" to actively practice speaking and
-                  pronunciation. This will help reinforce what you've learned
-                  and provide interactive feedback.
-                </li>
-                <li>
-                  Alternatively, click "See Example" below to view a demo of how
-                  the application works.
-                </li>
+                <li>Upload PDF</li>
+                <li>Generate examples</li>
+                <li>Practice speaking</li>
               </ol>
+              <br></br>
+              <strong>
+                Click "See Example" for an example text. Then click "More
+                Examples"
+              </strong>
             </div>
 
             <div className="flex justify-center mb-6 space-x-4">

@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Resonant: Revolutionizing Language Learning
 
-## Getting Started
+## Overview
 
-First, run the development server:
+**Resonant** transforms traditional language textbooks into interactive, personalized audio experiences, making language learning immersive and effective. By leveraging advanced AI, Resonant turns static content into dynamic conversations, providing learners with real-time feedback, tailored exercises, and adaptive learning pathways.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [Features](#features)
+- [How It Works](#how-it-works)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Interactive Audio Lessons**: Convert textbook content into audio lessons that provide real-time conversation practice.
+- **Personalized Feedback**: Receive corrections on pronunciation and language use, just like having a personal tutor.
+- **Adaptive Learning Pathways**: Resonant adapts to each learner's unique progress, providing customized lessons that match your pace.
+- **Dynamic Conversations**: Engage in real-world dialogues to apply what you've learned in practical situations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How It Works
 
-## Deploy on Vercel
+1. **Upload a Textbook**: Start by uploading your language textbook (in PDF format).
+2. **Generate Examples**: Resonant extracts the key language concepts and generates interactive examples.
+3. **Practice Speaking**: Use our real-time conversation feature to practice pronunciation and receive personalized AI feedback.
+4. **Dynamic Learning**: Each session adapts to your strengths and weaknesses, providing tailored exercises and conversations to enhance retention.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## The Problem
+
+Language learning is often limited by static textbooks that offer a passive experience. Learners miss out on real-world conversational practice and real-time feedback, making the journey to fluency slow and uninspiring. Many traditional solutions lack personalization and adaptability, making language learning less engaging and effective.
+
+---
+
+## The Solution
+
+**Resonant** addresses these challenges by embedding AI into every textbook:
+
+- It **brings language to life** with interactive, immersive content.
+- **Guides learners in real time** with personalized audio feedback.
+- **Adapts dynamically** to provide relevant practice based on individual learner progress.
+
+Unlike language apps that follow scripted lessons or audio platforms that lack interactivity, Resonant is about creating **dynamic learning experiences** that feel conversational, engaging, and effective.

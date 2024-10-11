@@ -25,19 +25,15 @@ Avoid textbook-style content. Instead, ensure the guide is dynamic and accessibl
 `,
           },
         ],
-        max_tokens: 5000,
+        max_tokens: 3000,
         temperature: 0.7,
       });
 
       const examples = response.choices[0].message.content.trim();
-
-      console.log("Generated Examples and Explanations:", examples);
-
-      //   const audioBase64 = await textToSpeech(examples);
-      //   res
-      //     .status(200)
-      //     .json({ examples, audioUrl: `data:audio/mpeg;base64,${audioBase64}` });
-      res.status(200).json({ examples });
+      const audioBase64 = await textToSpeech(examples);
+      res
+        .status(200)
+        .json({ examples, audioUrl: `data:audio/mpeg;base64,${audioBase64}` });
     } catch (error) {
       console.error("Error generating examples:", error);
       res.status(500).json({ error: "Error generating examples" });
