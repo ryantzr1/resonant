@@ -35,13 +35,14 @@ export default async function handler(req, res) {
       });
 
       const examples = response.choices[0].message.content.trim();
-      const audioBase64 = await textToSpeech(examples);
+      // lantency issues in severless so will use hardcoded audio url for now
+      //   const audioBase64 = await textToSpeech(examples);
 
-      console.log(examples);
-
-      res
-        .status(200)
-        .json({ examples, audioUrl: `data:audio/mpeg;base64,${audioBase64}` });
+      res.status(200).json({
+        examples,
+        audioUrl:
+          "https://www.dropbox.com/scl/fi/dd2x7b4b5a09uq1h0110n/audio_1728683248626.mp3?rlkey=oveoxgs6b7i71goflnoy85bi4&st=zbtfigkt&dl=1", // Use the hardcoded audio URL
+      });
     } catch (error) {
       console.error("Error generating examples:", error);
       res.status(500).json({ error: "Error generating examples" });

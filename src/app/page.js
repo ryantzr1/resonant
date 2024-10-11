@@ -12,6 +12,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const fileInputRef = useRef(null);
 
+  // Handle PDF file upload and extract content
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -41,6 +42,7 @@ export default function Home() {
     }
   };
 
+  // Handle generating examples and fetching audio
   const handleMoreExamples = async () => {
     setIsLoading(true);
     setError("");
@@ -50,9 +52,14 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content }),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       setContent(data.examples);
-      setAudioUrl(data.audioUrl);
+      setAudioUrl(data.audioUrl); // Update to use the server-provided cloud URL for audio
     } catch (error) {
       setError("Error generating examples. Please try again.");
       console.error("Error generating examples:", error);
@@ -61,6 +68,7 @@ export default function Home() {
     }
   };
 
+  // Modal for speaking practice information
   const handleSpeakingPractice = () => {
     setIsModalOpen(true);
   };
@@ -69,6 +77,7 @@ export default function Home() {
     setIsModalOpen(false);
   };
 
+  // Handle loading pre-filled example content
   const handleSeeExample = () => {
     setContent(preFilledContent);
   };
@@ -91,7 +100,7 @@ export default function Home() {
                 <li>Generate examples</li>
                 <li>Practice speaking</li>
               </ol>
-              <br></br>
+              <br />
               <strong>
                 Click "See Example" for an example text. Then click "More
                 Examples"
